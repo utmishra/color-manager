@@ -3,6 +3,9 @@
 A simple API that manages color definitions. Each color has a name and a hex value. Your API should be responsible for the following things: list, create, and also delete colors. A frontend exists as well, that interacts with this API.
 ```
 
+### Wireframe
+- [Balsamiq](https://balsamiq.cloud/suqp2lc/pl95lyh)
+
 ## Plan
 ### Components
 - **Frontend**
@@ -20,7 +23,12 @@ A simple API that manages color definitions. Each color has a name and a hex val
 	- MySQL
 		- Models
       - Color
-			- Basic table with primary key and constraints
+        - Basic table with primary key and constraints
+        - Columns
+          - id (int) [primary, auto-increment]
+          - hexcode (varchar(6)) [unique]
+          - name (varchar(100)) [unique]
+          - is_deleted (boolean)
 			- Leverage migrations
 			- Leverage Database seeding
 ```
