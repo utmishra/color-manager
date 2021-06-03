@@ -26,7 +26,7 @@ class ColorController extends Controller
         $pageSize = $request->input('size') != null ? $request->input('size') : 30;
         $from     = $request->input('from') != null ? $request->input('from') : 1;
         Log::info("Page size: {$pageSize}, Offset: {$from}");
-        return ColorResource::collection(Color::where('is_deleted', false)->orderByDesc('created_at')->skip($from)->take($pageSize)->get());
+        return ColorResource::collection(Color::select(['id', 'name', 'hex', 'created_at', 'updated_at'])->orderByDesc('created_at')->skip($from)->take($pageSize)->get());
     }
 
     /**
