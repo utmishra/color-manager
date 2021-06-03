@@ -16,7 +16,7 @@
     <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ asset('images/favicon.ico') }}">
     <link rel="canonical" href="https://color-manager.xyz" />
 
-    <title>Color Manager</title>
+    <title>Color Manager | Manager Colors in hex code</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
