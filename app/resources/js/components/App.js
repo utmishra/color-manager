@@ -13,7 +13,7 @@ const useStyles = makeStyles({
       color: 'white',
       fontSize: '25px',
       padding: '0 2%',
-      height: '100%'
+      height: '100vh'
     },
   });
 
