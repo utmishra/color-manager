@@ -10,12 +10,13 @@ import ColorBlock from './ColorBlock';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    boxShadow: '0px 4px 3px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)'
   },
   title: {
     fontSize: '2.2 rem',
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',    
   }
 });
 

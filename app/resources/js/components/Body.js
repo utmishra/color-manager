@@ -11,11 +11,13 @@ const useStyles = makeStyles({
   body: {
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     fontSize: '1rem',
-    margin: '20px',
+    margin: '50px',
     textAlign: 'center',
     border: '1px solid white',
     borderRadius: '1%',
-    height: '500px'
+    minHeight: '500px',
+    overflowY: 'scroll',
+    overflowX: 'hidden'
   },
   createButton: {
     color: 'white',
@@ -23,7 +25,7 @@ const useStyles = makeStyles({
     borderRadius: '5%',
     padding: '10px',
     textAlign: 'center',
-    margin: '20px'
+    margin: '0 50px'
   }
 });
 

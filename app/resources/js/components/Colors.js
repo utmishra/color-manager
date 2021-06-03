@@ -15,6 +15,31 @@ const colors = [
     name: 'White',
     hex: 'FFFFFF'
   },
+  {
+    id: 2,
+    name: 'White',
+    hex: 'FFFFFF'
+  },
+  {
+    id: 3,
+    name: 'White',
+    hex: 'FFFFFF'
+  },
+  {
+    id: 4,
+    name: 'White',
+    hex: 'FFFFFF'
+  },
+  {
+    id: 5,
+    name: 'White',
+    hex: 'FFFFFF'
+  },
+  {
+    id: 6,
+    name: 'White',
+    hex: 'FFFFFF'
+  },
 ];
 
 const useStyles = makeStyles({
@@ -28,7 +53,10 @@ function Colors() {
   return (
     <Grid 
       container      
-      spacing={5}
+      spacing={6}
+      direction="row"
+      justify="space-between"
+      alignItems="center"      
       className={classes.grid}
     >
       {colors.map(singleColor => (

@@ -10202,7 +10202,7 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__.default
     color: 'white',
     fontSize: '25px',
     padding: '0 2%',
-    height: '100vh'
+    height: '100%'
   }
 });
 
@@ -10255,11 +10255,13 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default
   body: {
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     fontSize: '1rem',
-    margin: '20px',
+    margin: '50px',
     textAlign: 'center',
     border: '1px solid white',
     borderRadius: '1%',
-    height: '500px'
+    minHeight: '500px',
+    overflowY: 'scroll',
+    overflowX: 'hidden'
   },
   createButton: {
     color: 'white',
@@ -10267,7 +10269,7 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default
     borderRadius: '5%',
     padding: '10px',
     textAlign: 'center',
-    margin: '20px'
+    margin: '0 50px'
   }
 });
 
@@ -10363,7 +10365,8 @@ __webpack_require__.r(__webpack_exports__);
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default)({
   root: {
     minWidth: 275,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    boxShadow: '0px 4px 3px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)'
   },
   title: {
     fontSize: '2.2 rem',
@@ -10434,6 +10437,26 @@ var colors = [{
   id: 2,
   name: 'White',
   hex: 'FFFFFF'
+}, {
+  id: 2,
+  name: 'White',
+  hex: 'FFFFFF'
+}, {
+  id: 3,
+  name: 'White',
+  hex: 'FFFFFF'
+}, {
+  id: 4,
+  name: 'White',
+  hex: 'FFFFFF'
+}, {
+  id: 5,
+  name: 'White',
+  hex: 'FFFFFF'
+}, {
+  id: 6,
+  name: 'White',
+  hex: 'FFFFFF'
 }];
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__.default)({
   grid: {
@@ -10445,7 +10468,10 @@ function Colors() {
   var classes = useStyles();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__.default, {
     container: true,
-    spacing: 5,
+    spacing: 6,
+    direction: "row",
+    justify: "space-between",
+    alignItems: "center",
     className: classes.grid,
     children: colors.map(function (singleColor) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__.default, {
