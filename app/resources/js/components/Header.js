@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     color: 'white',
     fontSize: '3rem',
-    padding: '50px 0',
+    paddingTop: '50px',
     textAlign: 'center'
   },
   subtext: {
