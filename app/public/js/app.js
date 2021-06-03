@@ -9666,11 +9666,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var colors = [{
+  id: 1,
+  name: 'Black',
+  hex: '00000'
+}, {
+  id: 2,
+  name: 'Black',
+  hex: 'FFFFFF'
+}];
 
 function Colors() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1__.default, {
     container: true,
-    spacing: 2
+    spacing: 2,
+    children: colors.map(function (singleColor) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Colors, {
+        colorName: singleColor.name,
+        hex: singleColor.hex,
+        id: singleColor.id
+      }, singleColor.id);
+    })
   });
 }
 
