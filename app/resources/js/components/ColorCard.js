@@ -2,8 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 import ColorBlock from './ColorBlock';
 
@@ -31,6 +32,11 @@ let colorBlockCss = {
 function ColorCard(props) {
   const classes = useStyles();
   colorBlockCss['colorBlock']['background'] = `#${props.hex}`;
+
+  const handleDelete = () => {
+    props.handleDelete(props.id);
+  }
+
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -39,8 +45,10 @@ function ColorCard(props) {
         </Typography>
         <ColorBlock styleCss={colorBlockCss} />  
       </CardContent>
-      <CardActions>
-        <Button size="small"></Button>
+      <CardActions style={{ float: 'right' }}>
+        <Button size="small" onClick={handleDelete} >
+          <DeleteIcon style={{ color: 'white' }} />
+        </Button>
       </CardActions>
     </Card>
   )

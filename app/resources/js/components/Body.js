@@ -4,11 +4,17 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Colors from './Colors';
 import NewColorForm from './NewColorForm';
+import ConfirmationDialog from './ConfirmationDialog';
+
+const successMessage = 'Color has been created';
+const deletedMessage = 'Color has been deleted';
 
 const useStyles = makeStyles({
   body: {
@@ -35,8 +41,12 @@ const useStyles = makeStyles({
 function Body() {
 
   const [open, setOpen] = React.useState(false);
+  const [snackBarOpen, setSnackBarOpen] = React.useState(false);
+  const [snackBarType, setSnackBarType] = React.useState('success');
+  const [dialogOpen , setDialogOpen] = React.useState(false);
   const [colorsData, setColors] = useState([]);
   const [reloadNeeded, setReloadNeeded] = useState(true);
+  const [currentDeleteId, setDeleteId] = useState(null);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -60,8 +70,38 @@ function Body() {
     .catch(function (error) {
       console.log(error);
     });
-    setReloadNeeded(true);
+    setReloadNeeded(true);    
+    setSnackBarType('success');
+    setSnackBarOpen(true);
     setOpen(false);
+  }
+
+  const handleDelete = (id) => {
+    setDeleteId(id);
+    setDialogOpen(true);
+  }
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  }
+
+  const handleConfirmDelete = async () => {
+    var config = {
+      method: 'delete',
+      url: `/api/colors/${currentDeleteId}`,
+      headers: { 
+        'Content-Type': 'application/json'
+      }
+    };
+    
+    const result = await axios(config)
+    .catch(function (error) {
+      console.log(error);
+    });
+    setReloadNeeded(true);
+    handleDialogClose()
+    setSnackBarType('warning');
+    setSnackBarOpen(true);
   }
 
   useEffect(async () => {
@@ -96,11 +136,17 @@ function Body() {
           </Button>
         </Grid>
         <Box className={classes.body}>    
-          <Colors colorsData={colorsData} />    
+          <Colors colorsData={colorsData} handleDelete={handleDelete} />    
         </Box>
       </Container>
       </Grid>
       <NewColorForm open={open} handleSubmit={handleSubmit} handleCancel={handleCancel} />
+      <Snackbar open={snackBarOpen} autoHideDuration={6000}>
+        <Alert severity={snackBarType}>
+          {snackBarType == 'success' ? successMessage : deletedMessage}
+        </Alert>
+      </Snackbar>
+      <ConfirmationDialog open={dialogOpen} handleClose={handleDialogClose} handleConfirmDelete={handleConfirmDelete}  />
     </Box>
   );
 }

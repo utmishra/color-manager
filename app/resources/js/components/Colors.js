@@ -26,7 +26,7 @@ function Colors(props) {
         props.colorsData.length > 0 ?
           props.colorsData.map(singleColor => (
             <Grid key={singleColor.id} item >
-              <ColorCard key={singleColor.id} colorName={singleColor.name} hex={singleColor.hex} id={singleColor.id} />
+              <ColorCard key={singleColor.id} colorName={singleColor.name} hex={singleColor.hex} id={singleColor.id} handleDelete={props.handleDelete} />
             </Grid>
           ))
           :
