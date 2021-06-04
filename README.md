@@ -95,7 +95,7 @@ A simple API that manages color definitions. Each color has a name and a hex val
         - Basic table with primary key and constraints
         - Columns
           - id (int) [primary, auto-increment]
-          - hexcode (varchar(6)) [unique]
+          - hex (varchar(6)) [unique]
           - name (varchar(100)) [unique]
           - is_deleted (boolean)
 			- Leverage migrations
