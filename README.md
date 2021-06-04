@@ -12,6 +12,9 @@ A simple API that manages color definitions. Each color has a name and a hex val
 ### Source control
 - [Github](https://trello.com/invite/b/tpBSNlwe/b87ed87df9b6affcaaf178c74277bcda/color-manager)
 
+### API Doc
+- [Postman](https://documenter.getpostman.com/view/43680/TzY4ea5E)
+
 ## Plan
 
 ### Tasks
