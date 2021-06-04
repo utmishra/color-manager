@@ -141,7 +141,7 @@ function Body() {
       </Container>
       </Grid>
       <NewColorForm open={open} handleSubmit={handleSubmit} handleCancel={handleCancel} />
-      <Snackbar open={snackBarOpen} autoHideDuration={6000}>
+      <Snackbar open={snackBarOpen} autoHideDuration={6000} onClose={e => setSnackBarOpen(false)}>
         <Alert severity={snackBarType}>
           {snackBarType == 'success' ? successMessage : deletedMessage}
         </Alert>
